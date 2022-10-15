@@ -6,9 +6,10 @@ app.UseHttpsRedirection();
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-app.MapGet("/hello", () =>
+app.MapPost("/ocr", (HttpRequest request) =>
 {
-    return new[]{"Hello!"};
+    var fileNames = request.Form.Files.Select(f => f.FileName);
+    return fileNames;
 });
 
 app.Run();
