@@ -12,6 +12,7 @@
     <None Include="wwwroot\index.html" />
     <None Include="wwwroot\main.css" />
     <None Include="wwwroot\main.js" />
+    <None Include="wwwroot\spectre.min.css" />
   </ItemGroup>
 
   <ItemGroup>
