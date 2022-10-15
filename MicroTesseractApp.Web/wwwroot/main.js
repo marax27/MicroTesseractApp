@@ -1,7 +1,17 @@
+function updateOcrResults(ocrResult) {
+  const outputElement = document.getElementById("ocrResults");
+  const { filename, meanConfidence, text } = ocrResult;
+
+  outputElement.innerHTML = `
+    <h3>OCR Results</h3>
+    <p>Filename: ${filename}</p>
+    <p>Mean Confidence: ${meanConfidence}</p>
+    <p>Text: ${text}</p>
+  `;
+}
+
 function uploadFiles(formElement) {
   let formData = new FormData(formElement);
-
-  const outputElement = document.getElementById("ocrResults");
 
   fetch("/ocr", {
     method: "POST",
@@ -9,7 +19,7 @@ function uploadFiles(formElement) {
   })
     .then((res) => res.json())
     .then((json) => {
-      outputElement.innerText = JSON.stringify(json);
+      updateOcrResults(json);
     })
     .catch((err) => {
       console.error(`Something's gone wrong: ${err}`);
