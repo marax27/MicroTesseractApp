@@ -37,6 +37,10 @@
   margin-top: 1em;
 }
 
+#ocrResults {
+  word-wrap: break-word;
+}
+
 body {
   height: 100vh;
   margin: 0;
