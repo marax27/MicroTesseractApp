@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>~MicroTesseractApp~</title>
     <link rel="stylesheet" href="/main.css" />
     <link rel="stylesheet" href="/spectre.min.css" />
   </head>
   <body>
-    <h1>Hello!</h1>
+    <h1 class="bg-primary">Micro&#183;Tesseract&#183;App</h1>
 
     <div class="container">
       <div class="columns">
         <div class="column col-6">
           <div class="card bg-secondary">
             <div class="card-header">
-              <div class="h5">Drag and drop an image</div>
+              <div class="h5">Click to upload, or drag & drop a file</div>
             </div>
             <div class="card-body">
               <form
@@ -24,7 +24,7 @@
                 enctype="multipart/form-data"
                 onsubmit="uploadFiles(this);return false;"
               >
-                <div id="dragAndDropImage" class="bg-primary">
+                <div id="dragAndDropImage" class="upload-container">
                   <input
                     type="file"
                     id="fileUpload"
