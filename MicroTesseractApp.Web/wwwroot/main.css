@@ -32,3 +32,29 @@
 
   font-family: monospace;
 }
+
+body {
+  height: 100vh;
+  margin: 0;
+
+  display: grid;
+  row-gap: 0.5em;
+  grid-template-columns: auto;
+  grid-template-rows: 5em auto 2em;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.page-header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
