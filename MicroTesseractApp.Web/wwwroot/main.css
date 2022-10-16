@@ -33,6 +33,10 @@
   font-family: monospace;
 }
 
+.submit-button {
+  margin-top: 1em;
+}
+
 body {
   height: 100vh;
   margin: 0;

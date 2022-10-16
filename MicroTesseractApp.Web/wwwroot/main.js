@@ -11,9 +11,15 @@ function createParent(tagName, childNode) {
   return element;
 }
 
+function isEmptyOrWhitespace(str) {
+  return !str || !str.trim();
+}
+
 function updateOcrResults(ocrResult) {
   const outputElement = document.getElementById("ocrResults");
   const { filename, meanConfidence, text } = ocrResult;
+
+  const finalText = isEmptyOrWhitespace(text) ? "n/a" : text;
 
   const children = [
     createParent("p", createTextNode("strong", filename)),
@@ -21,11 +27,23 @@ function updateOcrResults(ocrResult) {
       "p",
       createTextNode("strong", `Mean confidence: ${meanConfidence}`)
     ),
-    createTextNode("div", text, ["text-results-block"]),
+    createTextNode("div", finalText, ["text-results-block"]),
   ];
 
   outputElement.innerHTML = "";
   children.forEach((child) => outputElement.appendChild(child));
+}
+
+function onFileInputChange(input) {
+  console.log("onFileInputChange");
+  const fileCount = input.files.length;
+  const submitButton = document.getElementsByClassName("submit-button")[0];
+  submitButton.disabled = fileCount === 0;
+
+  if (fileCount > 0) {
+    const el = document.getElementById("afterSubmitButton");
+    el.innerText = "File ready to send.";
+  }
 }
 
 function uploadFiles(formElement) {

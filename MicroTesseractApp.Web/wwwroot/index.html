@@ -29,9 +29,17 @@
                     type="file"
                     id="fileUpload"
                     name="fileUpload.formFile"
+                    oninput="onFileInputChange(this)"
                   />
                 </div>
-                <button onsubmit="uploadFiles()">Submit</button>
+                <button
+                  disabled
+                  class="submit-button btn btn-primary"
+                  onsubmit="uploadFiles()"
+                >
+                  Submit
+                </button>
+                <span id="afterSubmitButton"></span>
               </form>
             </div>
           </div>
