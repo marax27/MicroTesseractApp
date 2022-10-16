@@ -16,11 +16,9 @@ app.MapPost("/ocr", async (HttpRequest request, IServiceProvider services) =>
 
     var singleFile = request.Form.Files.Single();
 
-    var target = new MemoryStream();
+    using var target = new MemoryStream();
     await singleFile.CopyToAsync(target);
-
     var result = engine.ProcessFile(target.GetBuffer());
-
     return new OcrDto(singleFile.FileName, result.MeanConfidence, result.Text);
 });
 
