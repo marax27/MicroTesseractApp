@@ -2,7 +2,7 @@
 
 ## Getting started
 
-Docker Hub: https://hub.docker.com/repository/docker/marax27/micro-tesseract-app
+Docker Hub: https://hub.docker.com/r/marax27/micro-tesseract-app
 
 1. Run the image: `docker run -d -p 32100:80 marax27/micro-tesseract-app`
 2. Visit _http://localhost:32100_
